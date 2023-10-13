@@ -1,0 +1,2 @@
+#!/bin/bash
+ceps xsd.ceps.lex $1 mk_er_diagram.ceps

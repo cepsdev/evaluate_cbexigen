@@ -1,0 +1,16 @@
+print("erDiagram\n");
+
+for(e: root.complexType){
+    print(e.name.content(), "{\n");
+    for (ee: e.definition.sequence.element){
+        val ty=text(ee.type.content());
+        if (ty=="xs:unsignedShort"){let ty="unsignedShort";}
+        else if (ty=="xs:byte"){let ty="byte";}
+        else if (ty=="xs:short"){let ty="short";}
+        else if (ty=="xs:unsignedLong"){let ty="unsignedLong";}
+
+
+        print(ty," ", ee.name.content(), "\n");
+    }
+    print("}\n");    
+}
