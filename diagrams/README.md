@@ -1,4 +1,6 @@
+```mermaid
 erDiagram
+
 MessageHeaderType{
 sessionIDType SessionID
 unsignedLong TimeStamp
@@ -30,3 +32,4 @@ unsignedLong TimeAnchor
 }
 ListOfRootCertificateIDsType{
 }
+```
