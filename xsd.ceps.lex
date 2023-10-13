@@ -10,16 +10,30 @@ lexer read_transitions{
  any => .
 }
 
+
+
+lexer read_seq{
+ </xs:sequence> => exit .
+ <xs:element name=string type=string/> => element{name{$6;}; type{$9;};}; .
+ any => .
+}
+
 lexer read_complex_type{
  </xs:complexType> => exit.
+ <xs:sequence> => sequence{ call read_seq };.
  any => .   
 }
+
 
 
 BEGIN{
  <xs:complexType name=string> => 
  complexType{ 
-    name{}; definition{call read_complex_type}; 
+    name{$6;}; definition{call read_complex_type}; 
+ };.
+ <xs:complexType name=string abstract="true"> => 
+ complexTypeAbstract{ 
+    name{$6;}; definition{call read_complex_type}; 
  };.
  any => .
 }
