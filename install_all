@@ -1,0 +1,5 @@
+#!/bin/bash
+
+./ubuntu_20_or_greater_install_python
+./install_cbexigen
+./install_necessary_python_packages
