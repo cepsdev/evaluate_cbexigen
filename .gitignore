@@ -1,3 +1,8 @@
 cbexigen/
 V2G_*.xsd
 xmldsig-core-schema.xsd
+CMakeFiles/
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+v2g-example
