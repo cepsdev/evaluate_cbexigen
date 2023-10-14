@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cp config.py cbexigen/src
+mkdir -p cbexigen/src/input/schemas/ISO_15118-20/FDIS
+mkdir -p cbexigen/src/output/c
+ln cbexigen/src/output/c v2gproc --symbolic
+./download-1158-20-xsds cbexigen/src/input/schemas/ISO_15118-20/FDIS/
+python cbexigen/src/main.py
